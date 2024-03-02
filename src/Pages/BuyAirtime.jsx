@@ -1,6 +1,6 @@
 import Navigation from '../Navigation'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTableCellsLarge, faSignal, faPaperPlane, faWallet, faCircleQuestion, faMobileScreenButton, faChevronDown, faChevronUp, faNairaSign } from '@fortawesome/free-solid-svg-icons'
+import { faTableCellsLarge, faSignal, faPaperPlane, faWallet, faCircleQuestion, faMobileScreenButton, faChevronDown,faChevronUp, faNairaSign } from '@fortawesome/free-solid-svg-icons'
 import { Link, useResolvedPath, useMatch } from "react-router-dom"
 import img12 from "../assets/image12.png"
 import img13 from "../assets/image13.png"
@@ -54,7 +54,7 @@ export default function BuyAirtime({ toogleChange }) {
                             <div className={accordionOpen?"accordion-height" : 'accordion-one'}>
                                 <div className='accord-toggle'>
                                     <h3 className='accord-one-title'>Buy Airtime</h3>
-                                    <FontAwesomeIcon className="accord-icon1" icon={faChevronUp} onClick={() => {
+                                    <FontAwesomeIcon className="accord-icon1" icon={accordionOpen? faChevronDown: faChevronUp} onClick={() => {
                                         setAccordionOpen(!accordionOpen)
                                     }}/>
                                 </div>
@@ -62,7 +62,7 @@ export default function BuyAirtime({ toogleChange }) {
                                     <div className='input-container'>
                                         <input type="tel" className="accord-input-one" placeholder='Mobile Number' name="fname" />
                                         <div className='input-icon'>
-                                            <FontAwesomeIcon className="input-icon" icon={faChevronDown} />
+                                            <FontAwesomeIcon className="input-icon" icon={faChevronDown } />
                                         </div>
                                     </div>
                                     <div className='ip-container'>
