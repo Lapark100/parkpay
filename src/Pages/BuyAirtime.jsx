@@ -9,9 +9,10 @@ import img15 from "../assets/image15.png"
 import img16 from "../assets/image16.png"
 import Toogle from './Toogle'
 import { useState } from 'react'
-export default function BuyAirtime({toogleChange}) {
-const [toogle, setToggle] = useState(false)
-   
+export default function BuyAirtime({ toogleChange }) {
+    const [toogle, setToggle] = useState(false)
+    const [accordionOpen, setAccordionOpen] = useState(false)
+
 
     return (
         <>
@@ -50,12 +51,14 @@ const [toogle, setToggle] = useState(false)
                                     <img className="airtime-img" src={img12} alt='nigeria' /> <FontAwesomeIcon className="img-icon" icon={faChevronDown} />
                                 </div>
                             </div>
-                            <div className='accordion-one'>
+                            <div className={accordionOpen?"accordion-height" : 'accordion-one'}>
                                 <div className='accord-toggle'>
                                     <h3 className='accord-one-title'>Buy Airtime</h3>
-                                    <FontAwesomeIcon className="accord-icon1" icon={faChevronUp} />
+                                    <FontAwesomeIcon className="accord-icon1" icon={faChevronUp} onClick={() => {
+                                        setAccordionOpen(!accordionOpen)
+                                    }}/>
                                 </div>
-                                <div className='accordion-one-body'>
+                                <div className={accordionOpen? "accord-open" : 'accordion-one-body'}>
                                     <div className='input-container'>
                                         <input type="tel" className="accord-input-one" placeholder='Mobile Number' name="fname" />
                                         <div className='input-icon'>
@@ -77,7 +80,14 @@ const [toogle, setToggle] = useState(false)
                                             <FontAwesomeIcon className="icon2" icon={faNairaSign} />
                                         </div>
                                     </div>
-                                    <Toogle onChange={(event) => setToggle(event.target.checked)} />
+                                    <div className='toggle-section'>
+                                        <Toogle onChange={(event) => setToggle(event.target.checked)} />
+                                        <p className='toggle-label'>Save Beneficiary</p>
+                                    
+                                    </div>
+                                    <button to="/sign-up" id="2" className="btn-airtime" >
+                                            <p className="buy-spc">Pay</p>
+                                        </button>
                                 </div>
                             </div>
                         </div>
@@ -91,15 +101,3 @@ const [toogle, setToggle] = useState(false)
     )
 }
 
-function CustomLink({ to, children, ...props }) {
-    const resolvedPath = useResolvedPath(to)
-    const isActive = useMatch({ path: resolvedPath.pathname, end: true })
-
-    return (
-        <li className={isActive ? "active" : ""}>
-            <Link to={to} {...props}>
-                {children}
-            </Link>
-        </li>
-    )
-}
