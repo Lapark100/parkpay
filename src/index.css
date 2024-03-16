@@ -274,7 +274,7 @@ nav ul li {
   padding-top: 50px;
   background: rgba(203, 207, 210, 0.18);
   width: 100%;
-  height: 100vh;
+  height: 110vh;
 }
 
 .side-bar {
@@ -345,7 +345,7 @@ nav ul li {
 
 .airtime-center {
   width: 600px;
-  height: 92vh;
+  height: 102vh;
   margin-top: 0rem;
   margin-left: 0rem;
   background-color: #fff;
@@ -403,6 +403,7 @@ nav ul li {
   margin-left: 4.3rem;
   padding: 28px;
 }
+
 .accordion-height {
   margin-top: 14px;
   background-color: #f4f4f4;
@@ -430,6 +431,11 @@ nav ul li {
 .accord-icon1{
   padding-top: 3px;
   padding-left: 14rem;
+}
+
+.accord-icon2{
+  padding-top: 3px;
+  padding-left: 15.4rem;
 }
 .accord-input-one{
   color: #333;;
